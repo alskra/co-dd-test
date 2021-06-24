@@ -1,0 +1,60 @@
+.content {
+	margin-bottom: 40rem;
+	word-wrap: break-word;
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 40rem percentage(140 / 540) 24rem 0;
+		font-family: $headings-font-family;
+		font-weight: 400;
+		line-height: 1.15;
+		letter-spacing: $headings-letter-spacing;
+	}
+
+	h2 {
+		font-size: 40rem;
+	}
+
+	h3 {
+		font-size: 24rem;
+	}
+
+	p {
+		margin: 0 0 24rem;
+	}
+
+	a {
+		color: $color-blue-ribbon;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@include media-breakpoint-down(lg) {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-right: 0;
+		}
+
+		h2 {
+			font-size: 36rem;
+		}
+	}
+}

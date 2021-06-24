@@ -1,0 +1,20 @@
+.aside-nav {
+	font-family: $headings-font-family;
+	font-size: 14rem;
+	line-height: (20 / 14);
+	letter-spacing: $headings-letter-spacing;
+
+	&__item {
+		& + & {
+			margin-top: 32rem;
+		}
+	}
+
+	&__link {
+		display: block;
+
+		&.is-active {
+			font-weight: 700;
+		}
+	}
+}

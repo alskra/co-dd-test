@@ -1,0 +1,44 @@
+extends ../../pug/base
+include ../../components/header/header
+include ../../components/aside-nav/aside-nav
+include ../../components/section/section
+
+append variables
+	-
+		title = 'CO-DD Frontend Test';
+
+		function makeAnchor(str) {
+			return str
+					.trim()
+					.toLowerCase()
+					.replace(/[^a-zа-я0-9_]+/g, '-')
+					.replace(/-+$/, '');
+		}
+
+block body
+	+header().header--transparent
+	section.intro
+		.container.intro__container
+			.container__column.container__column--span-2
+				h1.intro__title Сила сторителлинга в отчетах устойчивого развития
+		.intro__run
+			.intro__run-container
+				.intro__item
+					.intro__item-number 1.
+					| рассказать о ценностях и стратегической повестке бренда
+				.intro__item
+					.intro__item-number 2.
+					| повысить вовлеченность сотрудников
+				.intro__item
+					.intro__item-number 3.
+					| привлечь новые таланты
+		button(type="button").intro__button-down
+			icon-svg(name="angle-down")
+
+	.container.app__container
+		aside.container__column
+			+aside-nav(sections)
+
+		main.container__column
+			each sectionItem in sections
+				+section(sectionItem)

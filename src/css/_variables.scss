@@ -1,0 +1,29 @@
+// Colors
+$color-black: #000;
+$color-white: #fff;
+$color-screamin-green: #44fba3;
+$color-amour: #f9e8f2;
+$color-blue-ribbon: #0047ff;
+$color: $color-black;
+$color-primary: $color-screamin-green;
+
+// Fonts
+$font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
+$font-family-wremena: "Wremena", serif, $font-family-emoji;
+$font-family-favorit-pro: "Favorit Pro", sans-serif, $font-family-emoji;
+$font-family: $font-family-wremena;
+$headings-font-family: $font-family-favorit-pro;
+$headings-letter-spacing: -0.02em;
+
+// Transitions
+$transition-duration: 0.2s;
+
+// Breakpoints
+$breakpoints: (
+	xs: 375px,
+	sm: 576px,
+	md: 768px,
+	lg: 1025px,
+	xl: 1200px,
+	xxl: 2560px
+);

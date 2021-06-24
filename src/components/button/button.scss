@@ -1,0 +1,27 @@
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--button-border-color, $color-primary);
+	border-radius: 40rem;
+	padding: 0 22rem;
+	height: 42rem;
+	font-family: $headings-font-family;
+	font-size: 14rem;
+	line-height: 1.25;
+	letter-spacing: $headings-letter-spacing;
+	white-space: nowrap;
+	text-align: center;
+	text-transform: lowercase;
+	color: var(--button-color, $color);
+	background-color: transparent;
+	transition: border-color, color, background-color;
+	transition-duration: $transition-duration;
+	user-select: none;
+
+	&__content {
+		overflow: hidden;
+		margin-bottom: 1 / 14 * 1em;
+		text-overflow: ellipsis;
+	}
+}

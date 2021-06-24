@@ -1,0 +1,41 @@
+.section {
+	position: relative;
+	margin: 0 -40rem 120rem;
+	padding: 0 40rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&--case {
+		padding-top: 120rem;
+		padding-bottom: 120rem;
+		background: $color-amour;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 -20rem 80rem;
+		padding: 0 20rem;
+
+		&--case {
+			padding-top: 40rem;
+			padding-bottom: 40rem;
+		}
+	}
+
+	&__anchor {
+		position: absolute;
+		left: 0;
+		top: -70rem;
+	}
+
+	&__content {
+		margin-right: percentage((813 - 80 - 540) / 2 / (813 - 80));
+		margin-left: percentage((813 - 80 - 540) / 2 / (813 - 80));
+
+		@include media-breakpoint-down(lg) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+}

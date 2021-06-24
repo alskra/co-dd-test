@@ -1,0 +1,17 @@
+mixin section(data)
+	section.section(class={[`section--${data.type}`]: data.type})&attributes(attributes)
+		if data.type !== 'case'
+			.section__anchor(id=makeAnchor(data.title))
+		.content.section__content
+			h2= data.title
+		each contentItem in data.content
+			case contentItem.type
+				when 'content'
+					.content.section__content!= contentItem.content
+				when 'cases'
+					.cases
+						each caseItem in contentItem.content
+							figure.cases__item
+								a.cases__item-image(href="#")
+								figcaption.cases__item-title
+									a(href="#")= caseItem

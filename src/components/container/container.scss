@@ -1,0 +1,32 @@
+.container {
+	display: grid;
+
+	//grid-template-columns: min(387rem, 400px) 1fr;
+	//grid-template-columns: 387fr 1200fr - 387fr;
+	grid-template-columns: 387rem 1fr;
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: auto 1fr;
+	}
+
+	&__column {
+		padding: 0 40rem;
+		min-width: 0;
+
+		&:nth-child(1):not(:only-child) {
+			background: $color-primary;
+		}
+
+		&:nth-child(2) {
+			background: $color-white;
+		}
+
+		&--span-2 {
+			grid-column: span 2;
+		}
+
+		@include media-breakpoint-down(lg) {
+			padding: 0 20rem;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+.app {
+	display: flex;
+	flex-flow: column;
+	min-height: 100vh;
+	font-family: $font-family;
+	font-size: 18rem;
+	line-height: 1.33;
+	color: $color;
+
+	&__container {
+		.container__column {
+			border-top: 70rem solid transparent;
+			padding-top: 50rem;
+			padding-bottom: 120rem;
+
+			&:nth-child(1) {
+				position: sticky;
+				top: 0;
+				align-self: start;
+				overflow-y: auto;
+				height: 100vh;
+
+				&::-webkit-scrollbar {
+					width: 4px;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background: $color;
+				}
+			}
+
+			&:nth-child(2) {
+				position: relative;
+			}
+		}
+
+		@include media-breakpoint-down(lg) {
+			.container__column {
+				border-top-width: 62rem;
+				padding-top: 18rem;
+				padding-bottom: 80rem;
+
+				&:nth-child(1) {
+					display: none;
+				}
+			}
+		}
+	}
+}

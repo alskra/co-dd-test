@@ -1,0 +1,90 @@
+.intro {
+	position: relative;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-end;
+	padding: 70rem 0 40rem;
+	min-height: 100vh;
+	background: url("../../images/design/intro-bg.jpg") no-repeat 50%/cover;
+
+	@include media-breakpoint-down(lg) {
+		padding: 62rem 0 24rem;
+	}
+
+	&__title {
+		margin: 0 percentage((1200 - 80 - 854) / (1200 - 80)) 24rem 0;
+		font-family: $headings-font-family;
+		font-weight: 400;
+		font-size: 64rem;
+		line-height: 1;
+		letter-spacing: $headings-letter-spacing;
+		color: $color-white;
+
+		@include media-breakpoint-down(lg) {
+			margin-right: 0;
+			font-size: 36rem;
+			line-height: (40 / 36);
+		}
+	}
+
+	&__run {
+		display: flex;
+		overflow: hidden;
+		padding: 0 20rem;
+		background: $color-primary;
+	}
+
+	&__run-container {
+		counter-reset: intro-items;
+		display: flex;
+		flex: none;
+	}
+
+	&__item {
+		counter-increment: intro-items;
+		display: flex;
+		flex: none;
+		align-items: center;
+		padding: 20rem;
+		min-height: 200rem;
+		font-size: 27rem;
+		line-height: 1.25;
+		white-space: nowrap;
+
+		&-number {
+			content: counter(intro-items) ".";
+			margin-top: -5 / 80 * 1em;
+			margin-right: 18rem;
+			font-size: 80rem;
+		}
+
+		@include media-breakpoint-down(lg) {
+			min-height: 120rem;
+			font-size: 24rem;
+
+			&-number {
+				font-size: 60rem;
+			}
+		}
+	}
+
+	&__button-down {
+		all: initial;
+		position: sticky;
+		bottom: 40rem;
+		display: block;
+		align-self: center;
+		margin-top: 51rem;
+		width: 43px;
+		color: $color-white;
+
+		svg {
+			cursor: pointer;
+		}
+
+		@include media-breakpoint-down(lg) {
+			bottom: 24rem;
+			margin-top: 24rem;
+		}
+	}
+}

@@ -1,0 +1,6 @@
+mixin aside-nav(data)
+	nav.aside-nav&attributes(attributes)
+		each sectionItem in data
+			if !sectionItem.type
+				.aside-nav__item
+					a.aside-nav__link(href='#' + makeAnchor(sectionItem.title))= sectionItem.title
