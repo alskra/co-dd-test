@@ -3,7 +3,7 @@ import './aside-nav.scss';
 const asideNavLinkEls = document.querySelectorAll('.aside-nav__link');
 let hash = decodeURI(location.hash);
 
-const setActiveEl = (resetHash = true) => {
+const setActiveEl = () => {
 	if (!hash) {
 		let el;
 
@@ -27,28 +27,29 @@ const setActiveEl = (resetHash = true) => {
 		});
 	}
 
-	if (resetHash) {
-		hash = '';
-	}
+	hash = '';
 };
 
 let timeoutId;
 
-window.addEventListener('scroll', () => {
+const debounceSetActiveEl = () => {
 	clearTimeout(timeoutId);
 	timeoutId = setTimeout(setActiveEl, 100);
-}, {passive: true});
+};
 
-window.addEventListener('resize', () => {
-	clearTimeout(timeoutId);
-	timeoutId = setTimeout(setActiveEl, 200);
+debounceSetActiveEl();
+
+window.addEventListener('popstate', () => {
+	hash = decodeURI(location.hash);
+	debounceSetActiveEl();
 });
 
 asideNavLinkEls.forEach((item) => {
 	item.addEventListener('click', () => {
 		hash = decodeURI(item.hash);
-		setActiveEl(false);
+		debounceSetActiveEl();
 	});
 });
 
-setActiveEl(false);
+window.addEventListener('scroll', debounceSetActiveEl, {passive: true});
+window.addEventListener('resize', debounceSetActiveEl);
