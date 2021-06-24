@@ -45,12 +45,12 @@ const updateRun = () => {
 	}
 };
 
+window.addEventListener('load', updateRun);
+
 window.addEventListener('resize', () => {
 	clearTimeout(timeoutId);
 	timeoutId = setTimeout(updateRun, 200);
 });
-
-updateRun();
 
 document.querySelector('.intro__button-down').addEventListener('click', () => {
 	document.querySelector('.app__container').scrollIntoView();
